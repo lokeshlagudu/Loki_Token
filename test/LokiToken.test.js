@@ -6,7 +6,7 @@ describe("LokiToken", function () {
   let owner;
   let addr1;
   let addr2;
-  const initialSupply = ethers.parseEther("100000000"); // 100 million tokens
+  const initialSupply = ethers.parseEther("500000"); // 500,000 tokens (half of max supply)
 
   beforeEach(async function () {
     [owner, addr1, addr2] = await ethers.getSigners();
@@ -93,14 +93,14 @@ describe("LokiToken", function () {
 
   describe("Minting", function () {
     it("Should allow owner to mint tokens", async function () {
-      const mintAmount = ethers.parseEther("1000000");
+      const mintAmount = ethers.parseEther("100000");
       await lokiToken.mint(addr1.address, mintAmount);
 
       expect(await lokiToken.balanceOf(addr1.address)).to.equal(mintAmount);
     });
 
     it("Should not allow non-owner to mint tokens", async function () {
-      const mintAmount = ethers.parseEther("1000000");
+      const mintAmount = ethers.parseEther("100000");
       const addr1Contract = lokiToken.connect(addr1);
 
       await expect(
@@ -153,8 +153,8 @@ describe("LokiToken", function () {
 
   describe("Total Supply", function () {
     it("Should return correct total supply after operations", async function () {
-      const mintAmount = ethers.parseEther("50000000");
-      const burnAmount = ethers.parseEther("10000000");
+      const mintAmount = ethers.parseEther("100000");
+      const burnAmount = ethers.parseEther("50000");
 
       await lokiToken.mint(addr1.address, mintAmount);
       const supplyAfterMint = await lokiToken.totalSupply();

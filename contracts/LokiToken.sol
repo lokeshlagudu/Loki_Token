@@ -16,7 +16,7 @@ contract LokiToken is ERC20, Ownable {
      * @dev Constructor that initializes the token with initial supply
      * @param initialSupply The initial number of tokens to mint (in wei)
      */
-    constructor(uint256 initialSupply) ERC20("Loki Token", "LOKI") {
+    constructor(uint256 initialSupply) ERC20("Loki Token", "LOKI") Ownable(msg.sender) {
         require(initialSupply <= MAX_SUPPLY, "Initial supply exceeds max supply");
         _mint(msg.sender, initialSupply);
     }

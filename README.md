@@ -41,7 +41,7 @@ This is where you write and deploy your token (using VS Code in this project).
 **Checklist:**
 - [ ] Open VS Code or your preferred IDE
 - [ ] Create a new file: `LokiToken.sol`
-- [ ] Ensure Solidity version is `^0.8.x`
+- [ ] Ensure Solidity version is `^0.8.x` (using 0.8.20 in this project)
 - [ ] Install necessary dependencies (see Installation section below)
 
 
