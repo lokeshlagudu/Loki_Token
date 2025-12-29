@@ -204,10 +204,6 @@ The test suite covers:
 - Owner-controlled minting
 - Standard ERC-20 security practices
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Disclaimer
 
 This smart contract is provided as-is. Always audit your contracts before deploying to mainnet and handling real funds.
