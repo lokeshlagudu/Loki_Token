@@ -8,16 +8,21 @@
     "deploy": "hardhat run scripts/deploy.js",
     "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia"
   },
-  "keywords": ["ethereum", "erc20", "token"],
+  "keywords": [
+    "ethereum",
+    "erc20",
+    "token"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.21.0",
     "chai": "^4.3.10",
-    "ethers": "^6.13.0"
+    "ethers": "^6.13.0",
+    "hardhat": "^2.21.0"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.0.0"
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^17.2.3"
   }
 }

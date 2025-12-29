@@ -1,9 +1,23 @@
 const hre = require("hardhat");
 
 async function main() {
-  console.log("Deploying Loki Token...");
+  // Get the signer (connected MetaMask account)
+  const [deployer] = await hre.ethers.getSigners();
+  
+  console.log("Connecting to MetaMask...");
+  console.log("Deploying with account:", deployer.address);
+  
+  // Check account balance
+  const balance = await hre.ethers.provider.getBalance(deployer.address);
+  console.log("Account balance:", hre.ethers.formatEther(balance), "ETH");
+  
+  // Get network information
+  const network = await hre.ethers.provider.getNetwork();
+  console.log("Network:", network.name, "(Chain ID:", network.chainId.toString() + ")");
+  
+  console.log("\nDeploying Loki Token...");
 
-  const initialSupply = hre.ethers.parseEther("100000000"); // 100 million tokens
+  const initialSupply = hre.ethers.parseEther("1000000"); // 1 million tokens (max supply)
   const LokiToken = await hre.ethers.getContractFactory("LokiToken");
   const token = await LokiToken.deploy(initialSupply);
 
